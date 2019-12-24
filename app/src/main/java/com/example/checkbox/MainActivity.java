@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText mInputMoney;
+    private EditText mInputMoney;//mInputMoney используется
     private EditText mInputInfo;
     private Button mBtnOk;
     private CheckBox mBankCardChkBx;
@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
         mCashAddressChkBx.setChecked(false);
     }
     private void initViews() {
-        mInputMoney = findViewById(R.id.inputMoney);
         mInputInfo = findViewById(R.id.inputInfo);
+        mInputMoney = findViewById(R.id.inputMoney);//здесь <<<
         mBtnOk = findViewById(R.id.btnOK);
         mBankCardChkBx = findViewById(R.id.bankCardChkBx);
         mMobilePhoneChkBx = findViewById(R.id.mobilePhoneChkBx);
         mCashAddressChkBx = findViewById(R.id.cashAddressChkBx);
         CompoundButton.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+                if (checked) {
                     switch (compoundButton.getId()) {
                         case R.id.bankCardChkBx:
                             resetCheckBoxes();
@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
         mCashAddressChkBx.setOnCheckedChangeListener(checkedChangeListener);
     }
     private void Button(){
-        Button button = (Button) findViewById(R.id.btnOK);
-        button.setOnClickListener(new View.OnClickListener() {
+        mBtnOk= findViewById(R.id.btnOK);
+        mBtnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Все ,ок", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,R.string.AllOk, Toast.LENGTH_LONG).show();
             }
         });
     }

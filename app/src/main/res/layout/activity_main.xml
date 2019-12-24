@@ -11,31 +11,31 @@
         android:id="@+id/inputMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Ввод денег"
+        android:hint="@string/Money"
         android:inputType="number"/>
     <EditText
         android:id="@+id/inputInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Информация об оплате" />
+        android:hint="@string/Info" />
     <Button
         android:id="@+id/btnOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK" />
+        android:text="@string/Okey" />
     <CheckBox
         android:id="@+id/bankCardChkBx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="С банковской карты"/>
+        android:text="@string/Card"/>
     <CheckBox
         android:id="@+id/mobilePhoneChkBx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="С мобильного телефона"/>
+        android:text="@string/Mobile"/>
     <CheckBox
         android:id="@+id/cashAddressChkBx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Наличными по адресу"/>
+        android:text="@string/Cash"/>
 </LinearLayout>
