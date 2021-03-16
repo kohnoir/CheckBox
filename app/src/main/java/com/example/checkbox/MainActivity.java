@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText mInputMoney;//mInputMoney используется
+    private EditText mInputMoney;
     private EditText mInputInfo;
     private Button mBtnOk;
     private CheckBox mBankCardChkBx;
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
         initViews();
         resetCheckBoxes();
         Button();
@@ -32,29 +33,31 @@ public class MainActivity extends AppCompatActivity {
         mMobilePhoneChkBx.setChecked(false);
         mCashAddressChkBx.setChecked(false);
     }
+    private void init(){
+        mInputInfo = findViewById(R.id.input_info);
+        mInputMoney = findViewById(R.id.input_money);
+        mBtnOk = findViewById(R.id.btn_ok);
+        mBankCardChkBx = findViewById(R.id.bank_card_chk_bx);
+        mMobilePhoneChkBx = findViewById(R.id.mobile_phone_chk_bx);
+        mCashAddressChkBx = findViewById(R.id.cash_address_chk_bx);
+    }
     private void initViews() {
-        mInputInfo = findViewById(R.id.inputInfo);
-        mInputMoney = findViewById(R.id.inputMoney);//здесь <<<
-        mBtnOk = findViewById(R.id.btnOK);
-        mBankCardChkBx = findViewById(R.id.bankCardChkBx);
-        mMobilePhoneChkBx = findViewById(R.id.mobilePhoneChkBx);
-        mCashAddressChkBx = findViewById(R.id.cashAddressChkBx);
         CompoundButton.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
                 if (checked) {
                     switch (compoundButton.getId()) {
-                        case R.id.bankCardChkBx:
+                        case R.id.bank_card_chk_bx:
                             resetCheckBoxes();
                             mBankCardChkBx.setChecked(true);
                             mInputInfo.setInputType(InputType.TYPE_CLASS_NUMBER);
                             break;
-                        case R.id.mobilePhoneChkBx:
+                        case R.id.mobile_phone_chk_bx:
                             resetCheckBoxes();
                             mMobilePhoneChkBx.setChecked(true);
                             mInputInfo.setInputType(InputType.TYPE_CLASS_PHONE);
                             break;
-                        case R.id.cashAddressChkBx:
+                        case R.id.cash_address_chk_bx:
                             resetCheckBoxes();
                             mInputInfo.setInputType(InputType.TYPE_CLASS_TEXT);
                             mCashAddressChkBx.setChecked(true);
@@ -69,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
         mCashAddressChkBx.setOnCheckedChangeListener(checkedChangeListener);
     }
     private void Button(){
-        mBtnOk= findViewById(R.id.btnOK);
+        mBtnOk= findViewById(R.id.btn_ok);
         mBtnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,R.string.AllOk, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,R.string.all_ok, Toast.LENGTH_LONG).show();
             }
         });
     }

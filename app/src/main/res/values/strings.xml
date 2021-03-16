@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">CheckBox</string>
-    <string name="AllOk">Все,ок.</string>
-    <string name="Money">Ввод денег</string>
-    <string name="Info">Информация об оплате</string>
-    <string name="Okey">OK</string>
-    <string name="Card">С банковской карты</string>
-    <string name="Mobile">С мобильного телефона</string>
-    <string name="Cash">Наличными по адресу</string>
+    <string name="all_ok">Все,ок.</string>
+    <string name="money">Ввод денег</string>
+    <string name="info">Информация об оплате</string>
+    <string name="okey">OK</string>
+    <string name="card">С банковской карты</string>
+    <string name="mobile">С мобильного телефона</string>
+    <string name="cash">Наличными по адресу</string>
 </resources>
